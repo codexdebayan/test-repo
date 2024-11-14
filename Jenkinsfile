@@ -5,7 +5,7 @@ pipeline{
         stage('Build'){
             steps{
                 script{
-                    docker build ('todo')
+                    docker.build('todo')
                 }
             }
         }

@@ -18,7 +18,7 @@ pipeline{
                 }
             }
         }
-        stage('Build'){
+        stage('Deploy'){
             steps{
                 script{
                     def path = pwd().replaceAll('C:', '/c').replaceAll('\\\\', '/')

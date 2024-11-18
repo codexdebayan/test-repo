@@ -13,6 +13,7 @@ pipeline{
         stage('Test'){
             steps{
                 script{
+                    timeout(time: 1, unit: 'MINUTES') {
                     def path = pwd().replaceAll('C:', '/c').replaceAll('\\\\', '/')
                     bat "docker run -v ${path}:${path} -w ${path} todo pytest test_app.py"
                 }

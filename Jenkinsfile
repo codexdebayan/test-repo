@@ -14,7 +14,7 @@ pipeline{
             steps{
                 script{
                     def path = pwd().replaceAll('C:', '/c').replaceAll('\\\\', '/')
-                    bat "docker run -v ${path}:${path} -w ${path} todo pytest test_app.py"
+                    sh "docker run -v ${path}:${path} -w ${path} todo pytest test_app.py"
                 }
             }
         }
@@ -23,7 +23,7 @@ pipeline{
                 timeout(time: 1, unit: 'MINUTES') {
                     script{
                         def path = pwd().replaceAll('C:', '/c').replaceAll('\\\\', '/')
-                        bat "docker run -v ${path}:${path} -w ${path} todo python app.py"
+                        sh "docker run -v ${path}:${path} -w ${path} todo python app.py"
                     }
                 }
             }

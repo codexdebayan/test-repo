@@ -20,10 +20,10 @@ pipeline{
         }
         stage('Deploy'){
             steps{
-                timeout(time: 1, unit: 'MINUTES') {
+                timeout(time: 2, unit: 'MINUTES') {
                     script{
                         def path = pwd().replaceAll('C:', '/c').replaceAll('\\\\', '/')
-                        sh "docker run -v ${path}:${path} -w ${path} todo python app.py"
+                        sh "docker run -d -v ${path}:${path} -w ${path} todo python app.py"
                     }
                 }
             }

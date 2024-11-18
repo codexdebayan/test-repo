@@ -30,7 +30,7 @@ pipeline{
 
     post{
         success{
-            echo "Depoyed Scccessfully"
+            echo "Depoyed Scccessfully !"
         }
 
         failure{

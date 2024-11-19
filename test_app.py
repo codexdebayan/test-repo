@@ -10,5 +10,5 @@ def test_fetch_user(client):
     res = client.get('/users')
     assert res.status_code == 200
     res_json = res.get_json()
-    expected_users = ["Gyan", "Prince", "Shyam", "John"]
+    expected_users = ["Gyan", "Prince", "Shyam", "Codex"]
     assert res_json == expected_users

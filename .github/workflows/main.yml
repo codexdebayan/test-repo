@@ -1,6 +1,6 @@
-name: chod-kha
+name: Main.Yml
 
-on: [push]
+on: [push, pull_request, fork]
 
 jobs:
   deploy:
